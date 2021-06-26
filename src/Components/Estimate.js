@@ -57,7 +57,7 @@ const Estimate = () => {
   return (
     <div id="estimate">
       <Typography variant="h4">Estimate</Typography>
-      <Card id="contain">
+      <Card className="contain">
         <div>
           <InputLabel id="rarity">Rarity</InputLabel>
           <Select
