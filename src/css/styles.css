@@ -16,7 +16,6 @@ p {
   padding-top: 2%;
 }
 
-#container {
+body {
   background-color: grey;
-  height: 3000px;
 }
