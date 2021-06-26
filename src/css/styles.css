@@ -1,0 +1,22 @@
+main {
+  margin: 0 auto;
+  width: 900px;
+}
+
+#estimate div#contain {
+  padding: 2%;
+  background-color: #fce5cd;
+}
+
+em {
+  margin-bottom: 2%;
+}
+
+p {
+  padding-top: 2%;
+}
+
+#container {
+  background-color: grey;
+  height: 3000px;
+}
