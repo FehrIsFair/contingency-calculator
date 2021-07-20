@@ -1,56 +1,87 @@
 main {
-  margin: 0 auto;
-  width: 900px;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
-
+body {
+  background-color: grey;
+}
+#manual .contain div#inputs div {
+  width: 100%;
+}
+#manual .contain div#inputs {
+  width: 60%;
+}
 #estimate div.contain {
   padding: 2%;
   background-color: #fce5cd;
 }
-
 #manual div.contain {
   padding: 2%;
   background-color: #fce5cd;
 }
-
-em {
-  margin-bottom: 2%;
+#inputs {
+  margin-top: 2%;
 }
-
-p {
-  padding-top: 2%;
+#today {
+  margin-top: 2%;
 }
-
-body {
-  background-color: grey;
+#hunter {
+  margin-top: 2%;
 }
-
-#manual .contain {
-  display: flex;
+@media only screen and (min-width: 600px) {
 }
-
-#manual .contain div {
-  width: 21%;
-  margin: 2% !important;
-}
-
-#manual .contain p {
-  width: 21%;
-}
-
-#manual .contain input {
-  width: 21%;
-}
-
-h6 {
-  width: 100%;
-}
-
-#manual div p {
-  margin-top: 3%;
-}
-
-#inputs div {
-  display: flex;
-  flex-direction: row;
+@media only screen and (min-width: 950px) {
+  #inputs, #today, #hunter {
+    margin-top: 0 !important;
+  }
+  #manual .contain div#inputs div {
+    width: 50%;
+  }
+  #manual .contain div#inputs {
+    width: 21%;
+  }
+  main {
+    margin: 0 auto;
+    width: 900px;
+  }
+  #manual .contain {
+    display: flex;
+  }
+  em {
+    margin-bottom: 2%;
+  }
+  
+  p {
+    padding-top: 2%;
+  }
+  
+  #manual .contain {
+    display: flex;
+  }
+  
+  #manual .contain div {
+    width: 21%;
+  }
+  
+  #manual .contain p {
+    width: 21%;
+  }
+  
+  #manual .contain input {
+    width: 100%;
+  }
+  
+  h6 {
+    width: 100%;
+  }
+  
+  #manual div p {
+    margin-top: 3%;
+  }
+  
+  #inputs div {
+    display: flex;
+    flex-direction: row;
+  }
 }
