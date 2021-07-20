@@ -43,9 +43,9 @@ const ManualEstimate = () => {
         </div>
         <div id="today">
           <Typography variant="h6">Today USD</Typography>
-          <Typography>{(gold*300).toLocaleString()}</Typography>
-          <Typography>{(silver*30).toLocaleString()}</Typography>
-          <Typography>{(copper*3).toLocaleString()}</Typography>
+          <Typography>{formatter.format(gold*300)}</Typography>
+          <Typography>{formatter.format(silver*30)}</Typography>
+          <Typography>{formatter.format(copper*3)}</Typography>
         </div>
         <div id="hunter">
           <Typography variant="h6">Contingency</Typography>
