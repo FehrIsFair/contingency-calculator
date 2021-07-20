@@ -20,6 +20,10 @@ const ManualEstimate = () => {
     setCopper(parseInt(event.target.value));
   }
 
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
 
   return (
     <div id="manual">
@@ -39,15 +43,15 @@ const ManualEstimate = () => {
         </div>
         <div id="today">
           <Typography variant="h6">Today USD</Typography>
-          <Typography>{gold*300}</Typography>
-          <Typography>{silver*30}</Typography>
-          <Typography>{copper*3}</Typography>
+          <Typography>{(gold*300).toLocaleString()}</Typography>
+          <Typography>{(silver*30).toLocaleString()}</Typography>
+          <Typography>{(copper*3).toLocaleString()}</Typography>
         </div>
         <div id="hunter">
           <Typography variant="h6">Contingency</Typography>
-          <Typography>{(gold*300)*0.0618}</Typography>
-          <Typography>{(silver*30)*0.0618}</Typography>
-          <Typography>{(copper*3)*0.0618}</Typography>
+          <Typography>{formatter.format((gold*300)*0.0618)}</Typography>
+          <Typography>{formatter.format((silver*30)*0.0618)}</Typography>
+          <Typography>{formatter.format((copper*3)*0.0618)}</Typography>
         </div>
       </Card>
     </div>
