@@ -3,14 +3,21 @@ import {
   Typography,
   Input
 } from "@material-ui/core"
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 const ManualEstimate = () => {
-  const [usdCopper, setUsdCopper] = useState()
-  const [gold, setGold] = useState(0)
+  const [gold, setGold] = useState(1)
+  const [silver, setSilver] = useState(1)
+  const [copper, setCopper] = useState(1)
 
   const handleGold = (event) => {
     setGold(parseInt(event.target.value));
+  }
+  const handleSilver = (event) => {
+    setSilver(parseInt(event.target.value));
+  }
+  const handleCopper = (event) => {
+    setCopper(parseInt(event.target.value));
   }
 
 
@@ -27,12 +34,20 @@ const ManualEstimate = () => {
         <div id="inputs">
           <Typography variant="h6">D&D</Typography>
           <Input onChange={handleGold} value={gold ? gold : 0} />
+          <Input onChange={handleSilver} value={silver ? silver : 0} />
+          <Input onChange={handleCopper} value={copper ? copper : 0} />
         </div>
         <div id="today">
           <Typography variant="h6">Today USD</Typography>
+          <Typography>{gold*300}</Typography>
+          <Typography>{silver*30}</Typography>
+          <Typography>{copper*3}</Typography>
         </div>
         <div id="hunter">
           <Typography variant="h6">Contingency</Typography>
+          <Typography>{(gold*300)*0.0618}</Typography>
+          <Typography>{(silver*30)*0.0618}</Typography>
+          <Typography>{(copper*3)*0.0618}</Typography>
         </div>
       </Card>
     </div>

@@ -8,6 +8,11 @@ main {
   background-color: #fce5cd;
 }
 
+#manual div.contain {
+  padding: 2%;
+  background-color: #fce5cd;
+}
+
 em {
   margin-bottom: 2%;
 }
@@ -39,4 +44,13 @@ body {
 
 h6 {
   width: 100%;
+}
+
+#manual div p {
+  margin-top: 3%;
+}
+
+#inputs div {
+  display: flex;
+  flex-direction: row;
 }
