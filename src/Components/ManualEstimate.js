@@ -3,12 +3,17 @@ import {
   Typography,
   Input
 } from "@material-ui/core"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 const ManualEstimate = () => {
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
   const [gold, setGold] = useState(1)
   const [silver, setSilver] = useState(1)
   const [copper, setCopper] = useState(1)
+  const [total, setTotal] = useState(formatter.format(((gold*300)*0.0618) + ((silver*30)*0.0618) + ((copper*3)*0.0618)))
 
   const handleGold = (event) => {
     setGold(parseInt(event.target.value));
@@ -20,10 +25,9 @@ const ManualEstimate = () => {
     setCopper(parseInt(event.target.value));
   }
 
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
+  useEffect(() => {
+    setTotal(formatter.format(((gold*300)*0.0618) + ((silver*30)*0.0618) + ((copper*3)*0.0618)))
+  }, [formatter, gold, silver, copper]);
 
   return (
     <div id="manual">
@@ -52,6 +56,10 @@ const ManualEstimate = () => {
           <Typography>{formatter.format((gold*300)*0.0618)}</Typography>
           <Typography>{formatter.format((silver*30)*0.0618)}</Typography>
           <Typography>{formatter.format((copper*3)*0.0618)}</Typography>
+        </div>
+        <div>
+          <Typography variant="h6">Contingency Total</Typography>
+          <Typography>{total}</Typography>
         </div>
       </Card>
     </div>
