@@ -13,7 +13,7 @@ const ManualEstimate = () => {
   const [gold, setGold] = useState(1)
   const [silver, setSilver] = useState(1)
   const [copper, setCopper] = useState(1)
-  const [total, setTotal] = useState(formatter.format(((gold*300)*0.0618) + ((silver*30)*0.0618) + ((copper*3)*0.0618)))
+  const [total, setTotal] = useState(((gold*300)*0.0618) + ((silver*30)*0.0618) + ((copper*3)*0.0618))
 
   const handleGold = (event) => {
     setGold(parseInt(event.target.value));
@@ -26,8 +26,8 @@ const ManualEstimate = () => {
   }
 
   useEffect(() => {
-    setTotal(formatter.format(((gold*300)*0.0618) + ((silver*30)*0.0618) + ((copper*3)*0.0618)))
-  }, [formatter, gold, silver, copper]);
+    setTotal(((gold*300)*0.0618) + ((silver*30)*0.0618) + ((copper*3)*0.0618))
+  }, [gold, silver, copper]);
 
   return (
     <div id="manual">
@@ -59,7 +59,7 @@ const ManualEstimate = () => {
         </div>
         <div>
           <Typography variant="h6">Contingency Total</Typography>
-          <Typography>{total}</Typography>
+          <Typography>{formatter.format(total)}</Typography>
         </div>
       </Card>
     </div>
